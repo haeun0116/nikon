@@ -556,6 +556,11 @@ html{
             header{
                 width: calc(100% / 12 * 2);
                 flex-wrap: wrap;
+                h2{
+                    span{
+                        display: none;
+                    }
+                }
                 .tab{
                     width: 100%;
                     display: flex;
@@ -591,10 +596,11 @@ html{
                     .artGroup{
                         width: 100%;
                         // height: #{'min(17rem,680px)'};
-                        height: #{'min(8.5rem,340px)'};
+                        height: 0;
                         .microGroup{
                             width: 220%;
-                            height: #{'min(8.5rem,340px)'};
+                            height: 0;
+                            overflow: hidden;
                             @include df;
                             article{
                                 width: calc(100% / 6 - 20px);
@@ -629,11 +635,15 @@ html{
                                     }
                                 }
                             }
+                            &.turn{
+                                height: #{'min(8.5rem,340px)'};
+                            }
                         }
                         .videoGroup{
                             width: 220%;
                             @include df;
-                            height: #{'min(8.5rem,340px)'};
+                            height: 0;
+                            overflow: hidden;
                             article{
                                 width: calc(100% / 6 - 20px);
                                 padding: $plh 0;
@@ -667,6 +677,9 @@ html{
                                         overflow: hidden;
                                     }
                                 }
+                            }
+                            &.show{
+                                height: #{'min(8.5rem,340px)'};
                             }
                         }
                     }
@@ -1103,6 +1116,67 @@ html{
                     }
                 }
             }
+            &.cnt04{
+                header{
+                    width: 100%;
+                    h2{
+                        width: calc(100% - 10px);
+                        br{
+                            display: none;
+                        }
+                        span{
+                            display: inline;
+                            font-family: 'xe';
+                            font-size: $p;
+                            margin-left: 10px;
+                        }
+                    }
+                    .tab{
+                        margin: 0 auto;
+                        width: calc(100% / 4 * 2);
+                        font-size: $li;
+                        line-height: $ll;
+                    }
+                    .btn{
+                        display: none;
+                    }
+                }
+                section{
+                    width: 90%;
+                    position: relative;
+                    .artView{
+                        // width: calc(100% / 4 * 3.4);
+                        min-width: none;
+                        margin-left: 0;
+                        .artGroup{
+                            width: 600%;
+                            .microGroup{
+                                width: 100%;
+                                article{
+                                    width: calc(100% / 6);
+                                    &:hover{
+                                        border-bottom: none;
+                                        border-top: none;
+                                    }
+                                }
+                            }
+                            .videoGroup{
+                                width: 100%;
+                                article{
+                                    width: calc(100% / 6);
+                                    &:hover{
+                                        border-bottom: none;
+                                        border-top: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .btn{
+                        width: calc(100% / 4 * 0.5);
+                    }
+                }
+            }
         }
     }
     .bnrWrap{
@@ -1153,8 +1227,21 @@ html{
         }
     }
     .ftrWrap{
+        margin-top: $ll;
+        background-color: #fe0;
+        height: auto;
+        .video{
+            display: none;
+        }
+        .ftrBg{
+            display: none;
+        }
         footer{
+            height: auto;
             @include grid('mob');
+            .texts{
+                padding-top: $lh;
+            }
         }
     }
  }

@@ -10,7 +10,6 @@ $(function(){
     var c3i=$('.cntWrap .content.cnt03 section .thumnail .image');
     var c3t=$('.cntWrap .content.cnt03 section .thumnail .text');
     var c3ai=$('.cntWrap .content.cnt03 section .thumb .thumbGroup article');
-    var c4aG=$('.cntWrap .content.cnt04 section .artView .artGroup');
     var c4mG=$('.cntWrap .content.cnt04 section .artView .artGroup .microGroup');
     var c4vG=$('.cntWrap .content.cnt04 section .artView .artGroup .videoGroup');
     var c4tb=$('.cntWrap .content.cnt04 header .tab .tabBtn');
@@ -108,16 +107,21 @@ $(function(){
     });
 
     c4tb.first().css({color:'#fe0'});
+    c4mG.addClass('turn');
     c4tb.first().click(function(){
-        c4aG.css({marginTop: '0'});
-        c4tb.css({color:'#fff'});
+        c4vG.removeClass('show');
+        c4mG.addClass('turn');
+        
         $(this).css({color:'#fe0'});
+        c4tb.last().css({color:'#fff'});
     });
     
     c4tb.last().click(function(){
-        c4aG.css({marginTop: 'min(-30%,-340px)'});
-        c4tb.css({color:'#fff'});
+        c4mG.removeClass('turn');
+        c4vG.addClass('show');
+        
         $(this).css({color:'#fe0'});
+        c4tb.first().css({color:'#fff'});
     });
 
 
