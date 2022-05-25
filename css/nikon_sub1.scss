@@ -93,11 +93,11 @@ html{
             h4{
                 font-size: #{'min(1.6em,16px)'};
                 font-family: 'gd';
-            }
-            .btn{
-                display: none;
-                font-size: $li;
-                line-height: $ll;
+                &:nth-child(2){
+                    display: none;
+                    font-size: $li;
+                    line-height: $ll;
+                }
             }
         }
     }
@@ -130,6 +130,9 @@ html{
             font-family: 'gd';
             h4{
                 cursor: pointer;
+                &:hover{
+                    color: #fe0;
+                }
             }
         }
     }
@@ -389,10 +392,11 @@ html{
                 header{
                     .hdrTop{
                         &::before{
-                            width: calc(100% / 12 * 7);
+                            width: calc(100% / 12 * 8);
                         }
                         h2{
                             color: #000;
+                            font-size: #{'min(2.8em,28px)'};
                         }
                     }
                     p{
@@ -735,6 +739,7 @@ html{
 
     html{
         font-size: 8vw;
+        overflow-x: hidden;
         body{
             font-size: 3vw;
         }
@@ -743,33 +748,39 @@ html{
     .hdrWrap{
         header{
             @include grid('mob');
-        }
-        .hdrLeft{
-            h1{
+            .hdrLeft{
                 width: calc(100% / 4 * 2);
-                line-height: $lh;
+                h1{
+                    line-height: $lh;
+                }
             }
-        }
-        .hdrMid{
-            display: none;
-        }
-        .hdrRight{
-            h4{
+            .hdrMid{
                 display: none;
             }
-            .btn{
-                display: block;
-                width: 100%;
+            .hdrRight{
+                width: calc(100% / 4);
                 line-height: $lh;
-                font-size: $li;
+                h4{
+                    display: none;
+                    &:nth-child(2){
+                        width: 100%;
+                        display: block;
+                        line-height: $lh;
+                        font-size: $h3;
+                        font-family: 'xe';
+                        text-align: right;
+                        margin-top: $plh;
+                    }
+                }
             }
         }
     }
     .navboxWrap{
+        transition: all 0.5s;
         position: fixed;
         top: 0;
-        z-index: 55;
-        display: block;
+        z-index: 888;
+        display: none;
         width: 0vw;
         height: 0vh;
         background-color: #000;
@@ -832,24 +843,430 @@ html{
     .mainWrap{
         .main{
             @include grid('mob');
+            h2{
+                font-size: $h2;
+                margin-top: $lh;
+            }
             .tab{
-                display: none;
+                font-size: $p;
+                width: calc(100% / 4 * 3);
             }
         }
     }
     .cntWrap{
+        margin-top: $ll;
         .content{
             @include grid('mob'); 
-        }
-    }
-    .bnrWrap{
-        .banner{
-            @include grid('mob');
+            .ovrGrid{
+                display: none;
+            }
+            header{
+                .hdrTop{
+                    height: $lh;
+                    &::before{
+                        width: calc(100% / 4 * 2);
+                    }
+                    h2{
+                        font-size: $h3;
+                        line-height: $lh;
+                    }
+                }
+                p{
+                    font-size: $p;
+                    line-height: $plh;
+                    width: 100%;
+                    height: $lh;
+                }
+            }
+            section{
+                .artView{
+                    width: calc(100% / 4 * 3.5);
+                    margin-left: 0;
+                    .artGroup{
+                        width: 600%;
+                        .article{
+                            width: calc(100% / 6 - 20px);
+                            @include df;
+                            .image{
+                                width: 80%;
+                                height: #{'min(5rem,200px)'};
+                            }
+                            .texts{
+                                padding-top: $ll;
+                                opacity: 1;
+                                transition: none;
+                                h3{
+                                    color: #fff;
+                                    font-size: $p;
+                                    line-height: $plh;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.cnt01{
+                &:hover{
+                    .ovrGrid{
+                        display: none;
+                    }
+                    header{
+                        .hdrTop{
+                            &::before{
+                                width: calc(100% / 4 * 2.2);
+                            }
+                            h2{
+                                color: #fff;
+                            }
+                        }
+                        p{
+                            margin-right: 0;
+                        }
+                    }
+                    section{
+                        .artView{
+                            .artGroup{
+                                .article{
+                                    &:nth-child(4){
+                                        .image{
+                                            width: 80%;
+                                        }
+                                        .texts{
+                                            opacity: 1;
+                                            h3{
+                                                color: #fff;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                header{
+                    .hdrTop{
+                        &::before{
+                            width: calc(100% / 4 * 2.2);
+                        }
+                        h2{
+                            width: calc(100% / 4 * 1.8);
+                        }
+                    }
+                }
+                section{
+                    .artView{
+                        .artGroup{
+                            .article{
+                                .image{
+                                    width: 80%;
+                                    height: #{'min(5rem,200px)'};
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            &.cnt02{
+                &:hover{
+                    .ovrGrid{
+                        display: none;
+                    }
+                    header{
+                        .hdrTop{
+                            &::before{
+                                width: calc(100% / 4);
+                            }
+                            h2{
+                                color: #fff;
+                            }
+                        }
+                        p{
+                            margin-left: 0;
+                        }
+                    }
+                    section{
+                        .artView{
+                            .artGroup{
+                                .article{
+                                    &:nth-child(2){
+                                        .image{
+                                            width: 80%;
+                                        }
+                                        .texts{
+                                            opacity: 1;
+                                            h3{
+                                                color: #fff;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                header{
+                    .hdrTop{
+                        &::before{
+                            width: calc(100% / 4);
+                        }
+                        h2{
+                            width: calc(100% / 4 * 3);
+                        }
+                    }
+                }
+                section{
+                    .artView{
+                        .artGroup{
+                            .article{
+                                flex-direction: row-reverse;
+                                .image{
+                                    width: 80%;
+                                    height: #{'min(5rem,200px)'};
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.cnt03{
+                &:hover{
+                    .ovrGrid{
+                        display: none;
+                    }
+                    header{
+                        .hdrTop{
+                            &::before{
+                                width: calc(100% / 4 * 0.5);
+                            }
+                            h2{
+                                color: #fff;
+                                font-size: $h3;
+                            }
+                        }
+                        p{
+                            margin-right: 0;
+                        }
+                    }
+                    section{
+                        .artView{
+                            .artGroup{
+                                .article{
+                                    &:nth-child(4){
+                                        .image{
+                                            width: 80%;
+                                        }
+                                        .texts{
+                                            opacity: 1;
+                                            h3{
+                                                color: #fff;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                header{
+                    .hdrTop{
+                        &::before{
+                            width: calc(100% / 4 * 0.5);
+                        }
+                        h2{
+                            width: calc(100% / 4 * 3.5);
+                        }
+                    }
+                }
+                section{
+                    .artView{
+                        .artGroup{
+                            .article{
+                                .image{
+                                    width: 80%;
+                                    height: #{'min(5rem,200px)'};
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.cnt04{
+                &:hover{
+                    .ovrGrid{
+                        display: none;
+                    }
+                    header{
+                        .hdrTop{
+                            &::before{
+                                width: calc(100% / 4 * 3.2);
+                            }
+                            h2{
+                                color: #fff;
+                            }
+                        }
+                        p{
+                            margin-right: 0;
+                        }
+                    }
+                    section{
+                        .artView{
+                            .artGroup{
+                                .article{
+                                    &:nth-child(4){
+                                        .image{
+                                            width: 80%;
+                                        }
+                                        .texts{
+                                            opacity: 1;
+                                            h3{
+                                                color: #fff;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                header{
+                    .hdrTop{
+                        &::before{
+                            width: calc(100% / 4 * 3.2);
+                        }
+                        h2{
+                            width: calc(100% / 4 * 1.8);
+                        }
+                    }
+                }
+                section{
+                    .artView{
+                        .artGroup{
+                            .article{
+                                .image{
+                                    width: 80%;
+                                    height: #{'min(5rem,200px)'};
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.cnt05{
+                &:hover{
+                    .ovrGrid{
+                        display: none;
+                    }
+                    header{
+                        .hdrTop{
+                            &::before{
+                                width: calc(100% / 4);
+                            }
+                            h2{
+                                color: #fff;
+                            }
+                        }
+                        p{
+                            margin-left: 0;
+                        }
+                    }
+                    section{
+                        .artView{
+                            .artGroup{
+                                .article{
+                                    &:nth-child(2){
+                                        .image{
+                                            width: 80%;
+                                        }
+                                        .texts{
+                                            h3{
+                                                color: #fff;
+                                                opacity: 1;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                header{
+                    .hdrTop{
+                        &::before{
+                            width: calc(100% / 4);
+                        }
+                        h2{
+                            width: calc(100% / 4 * 3);
+                        }
+                    }
+                }
+                section{
+                    .artView{
+                        .artGroup{
+                            .article{
+                                flex-direction: row-reverse;
+                                .image{
+                                    width: 80%;
+                                    height: #{'min(5rem,200px)'};
+                                }
+                                .texts{
+                                    opacity: 1;
+                                    h3{
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     .ftrWrap{
-        footer{
+        margin-top: $ll;
+        background-color: #fe0;
+        height: auto;
+        .video{
+            display: none;
+        }
+        .ftrBg{
+            display: none;
+        }
+        .footer{
+            color: #ccc;
+            height: #{'min(8rem,320px)'};
             @include grid('mob');
+            font-size: #{'min(1.2em,12px)'};
+            .texts{
+                padding-top: $lh;
+                font-size: $p;
+                .txtTop{
+                    line-height: $plh;
+                    width: 100%;
+                    .info{
+                        h4{
+                            min-width: 247px;
+                            &:nth-child(1){
+                                font-size: $p;
+                            }
+                        }
+                    }
+                }
+                .txtBtm{
+                    margin-top: $plh;
+                    width: 100%;
+                    font-size: $p;
+                    line-height: $lh;
+                    min-width: 284px;
+                }
+            }
+            a{
+                h1{
+                    width: calc(100% / 4 * 1.5);
+                    height: $lh;
+                    margin-top: $plh;
+                }
+            }
         }
     }
  }

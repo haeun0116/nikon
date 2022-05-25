@@ -593,94 +593,89 @@ html{
                     min-width: calc((100vw - 80vw) / 2 + 100%);
                     height: #{'min(8.5rem,340px)'};
                     overflow: hidden;
-                    .artGroup{
-                        width: 100%;
-                        // height: #{'min(17rem,680px)'};
+                    .microGroup{
+                        width: 220%;
                         height: 0;
-                        .microGroup{
-                            width: 220%;
-                            height: 0;
-                            overflow: hidden;
-                            @include df;
-                            article{
-                                width: calc(100% / 6 - 20px);
-                                padding: $plh 0;
-                                &:hover{
-                                    border-bottom: 2px solid #fe0;
-                                    border-top: 2px solid #fe0;
-                                }
-                                .image{
-                                    width: 100%;
-                                    height: #{'min(5rem,200px)'};
-                                    background-color: #ccc;
-                                    @include bg;
-                                    @for $i from 1 through 6{
-                                        &.i#{$i}{
-                                            background-image: url('../images/main/cnt04_micro_0#{$i}.png')
-                                        }
-                                    }
-                                }
-                                .texts{
-                                    margin-top: $plh;
-                                    font-family: 'gd';
-                                    h3{
-                                        font-size: $li;
-                                        line-height: $plh;
-                                    }
-                                    p{
-                                        font-size: $p;
-                                        line-height: $plh;
-                                        height: $lh;
-                                        margin-top: $plh;
+                        overflow: hidden;
+                        @include df;
+                        article{
+                            width: calc(100% / 6 - 20px);
+                            padding: $plh 0;
+                            &:hover{
+                                border-bottom: 2px solid #fe0;
+                                border-top: 2px solid #fe0;
+                            }
+                            .image{
+                                width: 100%;
+                                height: #{'min(5rem,200px)'};
+                                background-color: #ccc;
+                                @include bg;
+                                @for $i from 1 through 6{
+                                    &.i#{$i}{
+                                        background-image: url('../images/main/cnt04_micro_0#{$i}.png')
                                     }
                                 }
                             }
-                            &.turn{
-                                height: #{'min(8.5rem,340px)'};
+                            .texts{
+                                margin-top: $plh;
+                                font-family: 'gd';
+                                h3{
+                                    font-size: $li;
+                                    line-height: $plh;
+                                }
+                                p{
+                                    font-size: $p;
+                                    line-height: $plh;
+                                    height: $lh;
+                                    margin-top: $plh;
+                                }
                             }
                         }
-                        .videoGroup{
-                            width: 220%;
-                            @include df;
-                            height: 0;
-                            overflow: hidden;
-                            article{
-                                width: calc(100% / 6 - 20px);
-                                padding: $plh 0;
-                                &:hover{
-                                    border-bottom: 2px solid #fe0;
-                                    border-top: 2px solid #fe0;
-                                }
-                                .image{
-                                    width: 100%;
-                                    height: #{'min(5rem,200px)'};
-                                    background-color: #ccc;
-                                    @include bg;
-                                    @for $i from 1 through 6{
-                                        &.i#{$i}{
-                                            background-image: url('../images/main/cnt04_video_0#{$i}.jpg')
-                                        }
+                        &.turn{
+                            height: #{'min(8.5rem,340px)'};
+                        }
+                    }
+                    .videoGroup{
+                        width: 220%;
+                        @include df;
+                        height: 0;
+                        overflow: hidden;
+                        article{
+                            width: calc(100% / 6 - 20px);
+                            padding: $plh 0;
+                            &:hover{
+                                border-bottom: 2px solid #fe0;
+                                border-top: 2px solid #fe0;
+                            }
+                            .image{
+                                width: 100%;
+                                height: #{'min(5rem,200px)'};
+                                background-color: #ccc;
+                                @include bg;
+                                @for $i from 1 through 6{
+                                    &.i#{$i}{
+                                        background-image: url('../images/main/cnt04_video_0#{$i}.jpg')
                                     }
                                 }
-                                .texts{
+                            }
+                            .texts{
+                                margin-top: $plh;
+                                font-family: 'gd';
+                                h3{
+                                    font-size: $li;
+                                    line-height: $plh;
+                                }
+                                p{
+                                    font-size: $p;
+                                    line-height: $plh;
+                                    height: $lh;
                                     margin-top: $plh;
-                                    font-family: 'gd';
-                                    h3{
-                                        font-size: $li;
-                                        line-height: $plh;
-                                    }
-                                    p{
-                                        font-size: $p;
-                                        line-height: $plh;
-                                        height: $lh;
-                                        margin-top: $plh;
-                                        overflow: hidden;
-                                    }
+                                    overflow: hidden;
                                 }
                             }
-                            &.show{
-                                height: #{'min(8.5rem,340px)'};
-                            }
+                        }
+                        &.show{
+                            height: #{'min(8.5rem,340px)'};
                         }
                     }
                 }
@@ -903,6 +898,7 @@ html{
 
     html{
         font-size: 8vw;
+        overflow-x: hidden;
         body{
             font-size: 3vw;
         }
@@ -931,15 +927,17 @@ html{
                         font-size: $h3;
                         font-family: 'xe';
                         text-align: right;
+                        margin-top: $plh;
                     }
                 }
             }
         }
     }
     .navboxWrap{
+        transition: all 0.5s;
         position: fixed;
         top: 0;
-        z-index: 55;
+        z-index: 888;
         display: none;
         width: 0vw;
         height: 0vh;
@@ -1044,6 +1042,7 @@ html{
                             width: 700%;
                             article{
                                 width: calc(100% / 7);
+                                margin-left: -20px;
                                 .image{
                                     width: calc(100% / 4 * 2.5);
                                     height: #{'min(7rem,280px)'};
@@ -1136,44 +1135,83 @@ html{
                         width: calc(100% / 4 * 2);
                         font-size: $li;
                         line-height: $ll;
+                        min-width: 161px;
                     }
                     .btn{
                         display: none;
                     }
                 }
                 section{
-                    width: 90%;
+                    width: 100%;
                     position: relative;
+                    margin-top: $plh;
+                    overflow: hidden;
                     .artView{
-                        // width: calc(100% / 4 * 3.4);
+                        width: calc(100% / 4 * 3);
+                        height: #{'min(7rem,280px)'};
                         min-width: none;
-                        margin-left: 0;
-                        .artGroup{
-                            width: 600%;
-                            .microGroup{
-                                width: 100%;
-                                article{
-                                    width: calc(100% / 6);
-                                    &:hover{
-                                        border-bottom: none;
-                                        border-top: none;
+                        margin-left: calc(100% / 4 * 0.5);
+                        overflow: hidden;
+                        .microGroup{
+                            width: 505%;
+                            article{
+                                width: calc(100% / 6 - 20px);
+                                padding: 0;
+                                .image{
+                                    width: 100%;
+                                    height: #{'min(4rem,160px)'};
+                                }
+                                .texts{
+                                    h3{
+                                        font-size: $li;
+                                        line-height: $lh;
                                     }
+                                    p{
+                                        font-size: $p;
+                                        line-height: $plh;
+                                    }
+                                }
+                                &:hover{
+                                    border-bottom: none;
+                                    border-top: none;
                                 }
                             }
-                            .videoGroup{
-                                width: 100%;
-                                article{
-                                    width: calc(100% / 6);
-                                    &:hover{
-                                        border-bottom: none;
-                                        border-top: none;
+                            &.turn{
+                                height: #{'min(7.5rem,300px)'};
+                            }
+                        }
+                        .videoGroup{
+                            width: 505%;
+                            article{
+                                width: calc(100% / 6 - 20px);
+                                .image{
+                                    width: 100%;
+                                    height: #{'min(4rem,160px)'};
+                                }
+                                .texts{
+                                    h3{
+                                        font-size: $p;
+                                        line-height: $plh;
+                                    }
+                                    p{
+                                        font-size: $p;
+                                        line-height: $plh;
                                     }
                                 }
+                                &:hover{
+                                    border-bottom: none;
+                                    border-top: none;
+                                }
+                            }
+                            &.show{
+                                height: #{'min(7.5rem,300px)'};
                             }
                         }
                     }
                     .btn{
                         width: calc(100% / 4 * 0.5);
+                        left: 0;
+                        text-align: left;
                     }
                 }
             }
@@ -1236,12 +1274,41 @@ html{
         .ftrBg{
             display: none;
         }
-        footer{
-            height: auto;
+        .footer{
+            color: #ccc;
+            height: #{'min(8rem,320px)'};
             @include grid('mob');
+            font-size: #{'min(1.2em,12px)'};
             .texts{
                 padding-top: $lh;
+                font-size: $p;
+                .txtTop{
+                    line-height: $plh;
+                    width: 100%;
+                    .info{
+                        h4{
+                            min-width: 247px;
+                            &:nth-child(1){
+                                font-size: $p;
+                            }
+                        }
+                    }
+                }
+                .txtBtm{
+                    margin-top: $plh;
+                    width: 100%;
+                    font-size: $p;
+                    line-height: $lh;
+                    min-width: 284px;
+                }
+            }
+            a{
+                h1{
+                    width: calc(100% / 4 * 1.5);
+                    height: $lh;
+                    margin-top: $plh;
+                }
             }
         }
     }
- }
+}

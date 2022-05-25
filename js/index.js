@@ -1,4 +1,5 @@
 $(function(){
+    var wd = $(window).width();
     var mt =$('.mainWrap .main .tab h4');
     var mtb =$('.mainWrap .main .tab h4');
     var mg =$('.mainWrap .main .mainGroup');
@@ -10,11 +11,11 @@ $(function(){
     var c3i=$('.cntWrap .content.cnt03 section .thumnail .image');
     var c3t=$('.cntWrap .content.cnt03 section .thumnail .text');
     var c3ai=$('.cntWrap .content.cnt03 section .thumb .thumbGroup article');
-    var c4mG=$('.cntWrap .content.cnt04 section .artView .artGroup .microGroup');
-    var c4vG=$('.cntWrap .content.cnt04 section .artView .artGroup .videoGroup');
+    var c4mG=$('.cntWrap .content.cnt04 section .artView .microGroup');
+    var c4vG=$('.cntWrap .content.cnt04 section .artView .videoGroup');
     var c4tb=$('.cntWrap .content.cnt04 header .tab .tabBtn');
     var c4Btn=$('.cntWrap .content.cnt04 section .btn');
-
+    var ham=$('.hdrWrap header .hdrRight h4');
 
     var ind=0;
     var h4 = 0;
@@ -22,7 +23,56 @@ $(function(){
     var h5 = 0;
     var p =0;
     var thumb =0;
+    var mv =0;
+    var omv =0;
+    var sl =0;
+    var osl =0;
+    var ls=0;
+    var ols=0;
+
+
+
+    if(wd > 1024){
+        // pc버전
+        mv =-20;
+        omv =-40;
+        sl=-32;
+        osl=-64;
+        ls=-36;
+        ols=-72;
+    }else if(wd >= 420 && wd <= 1024 ){
+      // tab버전
+        mv =-20;
+        omv =-40;
+        sl=-32;
+        osl=-64;
+        ls=-36;
+        ols=-72;
+    }else{
+      // 모바일버전
+        mv =-100;
+        omv =-200;
+        sl=-100;
+        osl=-200;
+        ls=-85;
+        ols=-170;
+    }
     
+
+    ham.eq(1).click(function(){
+        $('.navboxWrap').css({
+            width: '100vw',
+            height: '100vh',
+            display: 'block'
+        });
+    });
+    $('.navboxWrap .navBox .navTop i').click(function(){
+        $('.navboxWrap').css({
+            width: '0vw',
+            height: '0vh',
+            display: 'none'
+        });
+    });
 
     mt.click(function(){
         ind = $(this).index();
@@ -33,16 +83,16 @@ $(function(){
     });
 
 
-    c1i.css({marginLeft : -20+'%'});
+    c1i.css({marginLeft : mv+'%'});
 
     c1bg.css({marginLeft : -100+'%'});
 
     c1btn.eq(0).click(function(){
         c1i.animate({
-            marginLeft : -40+'%'
+            marginLeft : omv+'%'
         },500,function(){
             c1i.find('article:first').appendTo(c1i);
-            c1i.css({marginLeft : -20+'%'});
+            c1i.css({marginLeft : mv+'%'});
         });
 
         c1bg.animate({
@@ -58,7 +108,7 @@ $(function(){
             marginLeft : 0+'%'
         },500,function(){
             c1i.find('article:last').prependTo(c1i);
-            c1i.css({marginLeft : -20+'%'});
+            c1i.css({marginLeft : mv+'%'});
         });
 
         c1bg.animate({
@@ -71,14 +121,14 @@ $(function(){
 
 
 
-    c3g.css({marginLeft : -32+'%'});
+    c3g.css({marginLeft : sl+'%'});
 
     c3btn.first().click(function(){
         c3g.animate({
-            marginLeft : -64+'%'
+            marginLeft : osl+'%'
         },500,function(){
             c3g.find('article:first').appendTo(c3g);
-            c3g.css({marginLeft : -32+'%'});
+            c3g.css({marginLeft : sl+'%'});
         });
     });
 
@@ -87,7 +137,7 @@ $(function(){
             marginLeft : 0+'%'
         },500,function(){
             c3g.find('article:last').prependTo(c3g);
-            c3g.css({marginLeft : -32+'%'});
+            c3g.css({marginLeft : sl+'%'});
         });
     });
 
@@ -125,22 +175,22 @@ $(function(){
     });
 
 
-    c4mG.css({marginLeft: -36+'%'});
-    c4vG.css({marginLeft: -36+'%'});
+    c4mG.css({marginLeft: ls+'%'});
+    c4vG.css({marginLeft: ls+'%'});
 
     c4Btn.click(function(){
         c4mG.animate({
-            marginLeft : -72+'%'
+            marginLeft : ols+'%'
         },500,function(){
             c4mG.find('article:first').appendTo(c4mG);
-            c4mG.css({marginLeft : -36+'%'});
+            c4mG.css({marginLeft : ls+'%'});
         });
 
         c4vG.animate({
-            marginLeft : -72+'%'
+            marginLeft : ols+'%'
         },500,function(){
             c4vG.find('article:first').appendTo(c4vG);
-            c4vG.css({marginLeft : -36+'%'});
+            c4vG.css({marginLeft : ls+'%'});
         });
     });
 
