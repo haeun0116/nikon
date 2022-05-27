@@ -395,7 +395,10 @@ html{
                         &:nth-child(odd).on+li{
                             height: #{'min(4rem,160px)'};
                             padding: $plh;
-                            border-bottom: 2px solid #fe0;
+                            border-bottom: 3px solid #fe0;
+                        }
+                        &:nth-child(odd).co+li+li{
+                            border-top: none;
                         }
                         &:nth-child(odd){
                             border-top: 1px solid #fff;

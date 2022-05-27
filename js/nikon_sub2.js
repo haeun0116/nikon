@@ -58,12 +58,19 @@ $(function(){
         im.css({height : bi});
     });
 
+
+    li.eq(2).css({borderTop: 'none'});
+    
     li.click(function(){
         li.removeClass('on');
         $(this).addClass('on');
+        li.eq(2).css({borderTop: '1px solid #fff'});
         
+        
+        li.removeClass('co');
+        $(this).addClass('co');
     });
-
+    
     $('.toTop').click(function(){
         $('html,body').stop().animate({ scrollTop : 0 },1000);            
     });
