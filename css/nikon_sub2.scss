@@ -632,9 +632,11 @@ html{
             @include grid('tab');
             &.cnt01{
                 section{
-                    .artView{
-                        width: calc((100vw - 1024px) + 100%);
-                        min-width: calc((100vw - 90vw) + 100%);
+                    width: 100%;
+                    .artview{
+                        width: calc((100vw - 1024px) / 2 + 100%);
+                        min-width: calc((100vw - 90vw) / 2 + 100%);
+                        overflow: hidden;
                     }
                 } 
             } 
@@ -643,6 +645,9 @@ html{
     .bnrWrap{
         .banner{
             @include grid('tab');
+            .image{
+                height: #{'min(41rem,1640px)'};
+            }
         }
     }
     .ftrWrap{
@@ -931,7 +936,7 @@ html{
             height: #{'min(30rem,1200px)'};
             .image{
                 width: 100%;
-                height: 0;
+                height: #{'min(20rem,800px)'};
             }
             .texts{
                 height: #{'min(26rem,1040px)'};
