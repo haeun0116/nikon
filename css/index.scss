@@ -902,6 +902,7 @@ html{
         }
     }
     .bnrWrap{
+        background-attachment: local;
         .banner{
             @include grid('tab');
         }
