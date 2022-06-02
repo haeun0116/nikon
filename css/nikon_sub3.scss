@@ -56,6 +56,9 @@ html{
         background-color: #000;
         color: #fff;
         font-family: 'xe';
+        .image{
+            text-indent: -99999px
+        }
     }
 }
 
@@ -71,6 +74,7 @@ html{
                 @include bg;
                 background-image: url('../images/yellow_logo.png');
                 cursor: pointer;
+                text-indent: -99999px
             }
         }
         .hdrMid{
@@ -407,6 +411,7 @@ html{
         border-top: 10px solid #000;
         video{
             width: 100%;
+            text-indent: -9999px;
         }
     }
     .ftrBg{
