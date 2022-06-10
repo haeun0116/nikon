@@ -141,6 +141,7 @@ html{
                 text-align: center;
                 font-size: $li;
                 height: #{'min(3rem,120px)'};
+                cursor: pointer;
                 &:hover{
                     &::before{
                         width: 100%;
@@ -343,6 +344,9 @@ html{
                     line-height: $ll;
                     bottom: 5%;
                     z-index: 55;
+                    .btn{
+                        cursor: pointer;
+                    }
                 }
             }
         }
@@ -549,6 +553,7 @@ html{
                         color: #fff;
                         .btn{
                             width: calc(100% / 12 * 0.5);
+                            cursor: pointer;
                         }
                     }
                 }
@@ -572,6 +577,7 @@ html{
                     font-size: $li;
                     font-family: 'gd';
                     line-height: $lh;
+                    cursor: pointer;
                 }
                 .btn{
                     width: calc(100% / 2 * 0.8);
@@ -580,6 +586,7 @@ html{
                     margin: 0 auto;
                     text-align: center;
                     margin-top: $lh;
+                    cursor: pointer;
                     span{
                         font-size: $p;
                         line-height: #{'min(3em,30px)'};
@@ -698,6 +705,7 @@ html{
                     font-size: #{'min(5em,50px)'};
                     color: #fe0;
                     text-shadow: 1px 1px 5px #fff;
+                    cursor: pointer;
                 }
             }
         }

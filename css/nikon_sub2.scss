@@ -314,6 +314,7 @@ html{
                             &:nth-child(1){
                                 display: none;
                             }
+                            cursor: pointer;
                         }
                     }
                 }
@@ -412,6 +413,7 @@ html{
                                 content: 'Q. ';
                                 display: inline;
                             }
+                            cursor: pointer;
                         }
                         &:nth-child(even){
                             span{
@@ -487,6 +489,7 @@ html{
             margin: auto;
             top: 60%;
             right: 0;left: 0;
+            cursor: pointer;
             span{
                 font-family: 'xe';
             }
